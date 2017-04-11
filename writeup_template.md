@@ -59,9 +59,9 @@ hog_feat = True             # HOG features on or off
 y_start_stop = [360, None]  # Min and max in y to search in slide_window()
 ```
 
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVM using HOG, color and spatial features. The code for this step is contained in lines #67 through #128 of the file called `train.py` in the code folder. 
 
 ### Sliding Window Search
 
