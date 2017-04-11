@@ -43,7 +43,19 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+I tried various combinations of parameters and the following parameters worked best. I also observed that the accuracy increased as I increased the histogram binning but it took a lot more time as well.
+
+color_space = 'YCrCb' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb
+orient = 9  # HOG orientations
+pix_per_cell = 8 # HOG pixels per cell
+cell_per_block = 2 # HOG cells per block
+hog_channel = 'ALL' # Can be 0, 1, 2, or "ALL"
+spatial_size = (32, 32) # Spatial binning dimensions
+hist_bins = 32    # Number of histogram bins
+spatial_feat = True # Spatial features on or off
+hist_feat = True # Histogram features on or off
+hog_feat = True # HOG features on or off
+y_start_stop = [360, None] # Min and max in y to search in slide_window()
 
 ####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
@@ -66,11 +78,11 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 ### Video Implementation
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 Here's a [link to my video result](./project_video.mp4)
 
 
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
 
