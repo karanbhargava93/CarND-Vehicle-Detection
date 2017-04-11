@@ -36,12 +36,12 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Here is an example using the `YCrCb` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 
 ![alt text][image2]
 
-####2. Explain how you settled on your final choice of HOG parameters.
+#### 2. Explain how you settled on your final choice of HOG parameters.
 
 I tried various combinations of parameters and...
 
@@ -49,9 +49,9 @@ I tried various combinations of parameters and...
 
 I trained a linear SVM using...
 
-###Sliding Window Search
+### Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+#### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
 I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
 
