@@ -21,6 +21,11 @@ The goals / steps of this project are the following:
 [image7]: ./examples/output_bboxes.png
 [video1]: ./project_video.mp4
 
+[test1]: ./output_images/test1.png
+[test2]: ./output_images/test2.png
+[test3]: ./output_images/test3.png
+[test4]: ./output_images/test4.png
+
 ### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
@@ -74,9 +79,12 @@ scale3 = 2.5
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Ultimately I searched on three scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a decent result.  Here are some example images:
 
-![alt text][image4]
+![alt text][test1]
+![alt text][test2]
+![alt text][test3]
+![alt text][test4]
 ---
 
 ### Video Implementation
