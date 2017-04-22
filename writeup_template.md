@@ -109,5 +109,5 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Setting the scale and the search regions for the windows was tough, moreover tuning the parameters for the SVM was also tough to get rid of false positives. The current pipeline fails due to varied illumination conditions, e.g. due to the change in the road. I had tried using HSV colorspace to combat the issue but didn't have much luck with it. I believe a deep learning approach would be much more elegant in this problem however that might not be real time. If the deep learning framework is to operate real time, then the processing power would have to be a lot!
 
