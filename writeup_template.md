@@ -81,8 +81,7 @@ scale3 = 2.5
 
 Ultimately I searched on three scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a decent result.  Here are some example images:
 
-![alt text][test1]
-![alt text][test2]
+![alt text][test1] ![alt text][test2]
 ![alt text][test3]
 ![alt text][test4]
 ---
