@@ -16,7 +16,6 @@ The goals / steps of this project are the following:
 [image2]: ./examples/HOG_example.jpg
 [image3]: ./examples/sliding_windows.jpg
 [image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
 [image6]: ./examples/labels_map.png
 [image7]: ./examples/output_bboxes.png
 [video1]: ./project_video.mp4
@@ -25,6 +24,7 @@ The goals / steps of this project are the following:
 [test2]: ./output_images/test2.png
 [test3]: ./output_images/test3.png
 [test4]: ./output_images/test4.png
+[frames]: ./output_images/frames.png
 
 ### Histogram of Oriented Gradients (HOG)
 
@@ -99,17 +99,9 @@ I recorded the positions of positive detections in each frame of the video. From
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are six frames and their corresponding heatmaps:
+### Here are six frames and their corresponding results:
 
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
-
+![alt text][frames]
 
 ---
 
