@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [test3]: ./output_images/test3.png
 [test4]: ./output_images/test4.png
 [frames]: ./output_images/frames.png
-[fheat]: ./output_images/fheat.png
+[fheat]: ./output_images/f_heat.png
 [heat]: ./output_images/heat.png
 
 
