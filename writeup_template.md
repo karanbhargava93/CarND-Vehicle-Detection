@@ -25,6 +25,9 @@ The goals / steps of this project are the following:
 [test3]: ./output_images/test3.png
 [test4]: ./output_images/test4.png
 [frames]: ./output_images/frames.png
+[fheat]: ./output_images/fheat.png
+[heat]: ./output_images/heat.png
+
 
 ### Histogram of Oriented Gradients (HOG)
 
@@ -102,6 +105,12 @@ Here's an example result showing the heatmap from a series of frames of video, t
 ### Here are six frames and their corresponding results:
 
 ![alt text][frames]
+
+### The following are the individual heatmaps for the previous frames:
+![alt text][heat]
+
+### The following are the final heatmaps for the previous frames:
+![alt text][fheat]
 
 ---
 
