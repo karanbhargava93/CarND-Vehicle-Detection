@@ -10,9 +10,17 @@ class detected_vehicles():
 
     def __init__(self, img):
         self.heatmap = np.zeros_like(img[:,:,0]) #[np.array([False])]
-        self.ystart = None
-        self.ystop = None
-        self.scale = None
+
+        self.ystart1 = None
+        self.ystop1 = None
+        self.scale1 = None
+        self.ystart2 = None
+        self.ystop2 = None
+        self.scale2 = None
+        self.ystart3 = None
+        self.ystop3 = None
+        self.scale3 = None
+
         self.svc = None
         self.X_scaler = None
         self.orient = None
@@ -21,10 +29,19 @@ class detected_vehicles():
         self.spatial_size = None
         self.hist_bins = None
 
-    def update_params(self, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
-        self.ystart = ystart
-        self.ystop = ystop
-        self.scale = scale
+    def update_params(self, ystart1, ystop1, scale1, ystart2, ystop2, scale2, ystart3, ystop3, scale3, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+        # self.ystart = ystart
+        # self.ystop = ystop
+        # self.scale = scale
+        self.ystart1 = ystart1
+        self.ystop1 = ystop1
+        self.scale1 = scale1
+        self.ystart2 = ystart2
+        self.ystop2 = ystop2
+        self.scale2 = scale2
+        self.ystart3 = ystart3
+        self.ystop3 = ystop3
+        self.scale3 = scale3
         self.svc = svc
         self.X_scaler = X_scaler
         self.orient = orient
@@ -37,22 +54,25 @@ class detected_vehicles():
         if (np.count_nonzero(self.heatmap)<1):
             self.heatmap = heatmap
         else:
-            theta = 0.25
+            theta = 0.10
             self.heatmap = self.heatmap*(1-theta) + heatmap*theta
 
     def process_img_heatmap(self, img):
-        out_img, heatmap = find_cars(img, self.ystart, self.ystop, self.scale, self.svc, self.X_scaler, self.orient, self.pix_per_cell, self.cell_per_block, self.spatial_size, self.hist_bins)
+        out_img, heatmap1 = find_cars(img, self.ystart1, self.ystop1, self.scale1, self.svc, self.X_scaler, self.orient, self.pix_per_cell, self.cell_per_block, self.spatial_size, self.hist_bins)
+        out_img, heatmap2 = find_cars(img, self.ystart2, self.ystop2, self.scale2, self.svc, self.X_scaler, self.orient, self.pix_per_cell, self.cell_per_block, self.spatial_size, self.hist_bins)
+        out_img, heatmap3 = find_cars(img, self.ystart3, self.ystop3, self.scale3, self.svc, self.X_scaler, self.orient, self.pix_per_cell, self.cell_per_block, self.spatial_size, self.hist_bins)
+        heatmap = heatmap1 + heatmap2 + heatmap3
         
-        size=25
-        size_dil = 20 #30
+        size=5 #25
+        size_dil = 5#20 #30
         kernel = np.ones((size,size),np.float32)/size**2
         kernel_dilate = np.ones((size_dil,size_dil))
 
-        heatmap = cv2.filter2D(heatmap,-1,kernel)
+        # heatmap = cv2.filter2D(heatmap,-1,kernel)
 
         self.update_heatmap(heatmap)
         
-        self.heatmap = apply_threshold(self.heatmap, 2)#1)#2.2)
+        self.heatmap = apply_threshold(self.heatmap, 1.5) #2)#1)#2.2)
 
         self.heatmap = cv2.dilate(self.heatmap, kernel_dilate, iterations=1)
 
