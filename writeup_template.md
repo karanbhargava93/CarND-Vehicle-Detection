@@ -57,7 +57,7 @@ I trained a linear SVM using HOG, color and spatial features. The code for this 
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I determined the scale and size of the window through trial an error from the test images. The scales and search ranges are given below:
+I determined the scale and size of the window through trial an error from the test images. They are encorporated into the `detected_vehicles` class in `lesson_functions.py` in the code folder. The values for the same are set at runtime in the file `runMe.py` in the code folder. The scales and search ranges are given below:
 ```
 ystart1 = 350
 ystop1 = 500
