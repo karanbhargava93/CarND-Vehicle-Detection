@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image4]: ./examples/sliding_window.jpg
 [image6]: ./examples/labels_map.png
 [image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
+[video1]: ./output_video.mp4
 
 [test1]: ./output_images/test1.png
 [test2]: ./output_images/test2.png
